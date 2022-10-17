@@ -47,7 +47,7 @@ def transition(vec1, vec2):
 en donde el sistema si se le da otro vector Ket, debe buscar la probabilidad de transitar del primer vector al segundo.
 
 Ahora bien,
-## Los retos de programación.
+### Los retos de programación.
 
 1. ***Amplitud de transición.*** El sistema puede recibir dos vectores y calcular la probabilidad de transitar de el uno al otro después de hacer la observación.
     
@@ -91,10 +91,10 @@ Ahora bien,
     # print("La varianza es: ", varianza(obs, vecEstado))
 
     ```
-## Problemas capítulo 4
+### Problemas capítulo 4
 En esta seccion se modelan los problemas 4.3.1, 4.3.2, 4.4.1, 4.4.2
 
-### Ejercicio 4.3.1
+#### Ejercicio 4.3.1
 
 “Encuentre todos los estados posibles a los que puede pasar el sistema descrito en el ejercicio 4.2.2 después de que se haya llevado a cabo una medición.”
 ```python
@@ -109,7 +109,7 @@ def ejercicio_431(observable):
     probabilidad = superposition(prod, 0)
     return probabilidad
 ```
-### Ejercicio 4.3.2
+#### Ejercicio 4.3.2
 
 “Realice los mismos cálculos que en el último ejemplo, usando el Ejercicio 4.3.1. Luego dibuje la distribución de probabilidad de los valores propios como en el ejemplo anterior.”
 
