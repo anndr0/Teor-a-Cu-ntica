@@ -97,16 +97,15 @@ En esta seccion se modelan los problemas 4.3.1, 4.3.2, 4.4.1, 4.4.2
 ### Ejercicio 4.3.1
 
 “Encuentre todos los estados posibles a los que puede pasar el sistema descrito en el ejercicio 4.2.2 después de que se haya llevado a cabo una medición.”
+```python
+def ejercicio_431(observable):
+""" Find all the possible states the system described in Exercise 4.2.2
+    can transition into after a measurement has been carried out.
 
-    ```python
-    def ejercicio_431(observable):
-    """ Find all the possible states the system described in Exercise 4.2.2
-        can transition into after a measurement has been carried out.
-
-        (list) -> float """
-    spinX = [1, 0]
-        spinX = numpy.array(spinX)
-        prod = accionMatrizVector(observable, spinX)
-        probabilidad = superposition(prod, 0)
-        return probabilidad
-    ```
+    (list) -> float """
+spinX = [1, 0]
+    spinX = numpy.array(spinX)
+    prod = accionMatrizVector(observable, spinX)
+    probabilidad = superposition(prod, 0)
+    return probabilidad
+```
