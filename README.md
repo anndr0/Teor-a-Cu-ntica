@@ -211,3 +211,6 @@ In[1]: initialVector = [1, 0, 0, 0]
 In[2]: print(ejercicio_442(initialVector, unitaryMap))
 Out[3]: 0.0
 ```
+## Autor ✒️
+
+* **Ana María Durán Burgos** - *Librería Operaciones con Números Complejos* - [anndr0](https://github.com/anndr0)
