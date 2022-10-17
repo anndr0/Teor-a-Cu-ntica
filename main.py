@@ -134,7 +134,7 @@ def varianza(observable, vecEstado):
     return var
 
 
-print("La varianza es: ", varianza(obs, vecEstado))
+# print("La varianza es: ", varianza(obs, vecEstado))
 
 """El sistema calcula los valores propios del observable y la probabilidad de que el sistema
     transite a alguno de los vectores propios después de la observación. """
@@ -154,7 +154,7 @@ def probabilidadTransicion(observable, posicion):
     return probabilidad
 
 
-# print(valPropio(obs))
+# print("Los valores propios son: ", valPropio(obs), "y la probabilidad es ", probabilidadTransicion(obs, 2) )
 
 """ COMPLETAR LIBRERIA """
 
