@@ -45,3 +45,8 @@ def transition(vec1, vec2):
 ```
 
 en donde el sistema si se le da otro vector Ket, debe buscar la probabilidad de transitar del primer vector al segundo.
+
+Ahora bien,
+## Los retos de programación.
+
+1. **Amplitud de transición.** El sistema puede recibir dos vectores y calcular la probabilidad de transitar de el uno al otro después de hacer la observación
