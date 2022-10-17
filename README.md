@@ -119,9 +119,62 @@ def ejercicio_431(observable):
     can transition into after a measurement has been carried out.
 
     (list) -> float """
-		spinX = [1, 0]
+    spinX = [1, 0]
     spinX = numpy.array(spinX)
     prod = accionMatrizVector(observable, spinX)
     probabilidad = superposition(prod, 0)
     return probabilidad
+```
+
+#### Ejercicio 4.4.1
+
+“Comprueba que son matrices unitarias. Multiplíquelos y comprueba que su producto también es unitario.”
+
+```python
+def ejercicio_441(u1, u2):
+    """Verify that are unitary matrices. Multiply them and verify that their product is also unitary.
+    (list), (list) -> boolean, boolean, boolean"""
+    
+    u1 = numpy.matrix(u1)
+    u2 = numpy.matrix(u2)
+    isU1 = unitaria(u1)
+    isU2 = unitaria(u2)
+    producto = numpy.dot(u1, u2)
+    productoUni = unitaria(producto)
+    return isU1, isU2, productoUni
+```
+
+#### Ejercicio 4.4.2
+
+“Regrese al Ejemplo 3.3.2 (bola de billar cuántica), mantenga el mismo vector de estado inicial [1, 0, 0, 0]T, pero cambie el mapa unitario a”
+
+```python
+def ejercicio_442(estadoInicial, mat):
+    """Go back to Example 3.3.2 (quantum billiard ball), keep the same
+    initial state vector [1, 0, 0, 0]T, but change the unitary map to """
+    matriz = numpy.matrix(mat)
+    estado = accionMatrizVector(estadoInicial, matriz)
+    probabilidad = probabilidadTransicion(estado, 3)
+    return probabilidad
+```
+## Ejecutando las pruebas
+```python
+In[0]: print("Probabilidad: ", superposition(vec=[(-3 - 1j), (-2j), 1j, 2], pos=2))
+Out[1]: Probabilidad:  0.0526
+```
+```python
+In[0]: print("Amplitud de transición: ", transition(vec1=[(-1j), 1], vec2=[1, (-1j)]))
+Out[1]: Amplitud de transición:  -1j
+```
+```python
+In[0]: obs = [[1, -1j], [1j, 2]]
+In[1]: vecEstado = [math.sqrt(2) / 2 + 0j, (math.sqrt(2) / 2) * 1j]
+In[2]: print("La media es: ", media(obs, vecEstado))
+Out[3]: La media es:  (0.5+0j)
+```
+```python
+In[0]: obs = [[1, -1j], [1j, 2]]
+In[1]: vecEstado = [math.sqrt(2) / 2 + 0j, (math.sqrt(2) / 2) * 1j]
+In[2]: print("La varianza es: ", varianza(obs, vecEstado))
+Out[3]: La varianza es:  (0.25+0j)
 ```
