@@ -49,4 +49,45 @@ en donde el sistema si se le da otro vector Ket, debe buscar la probabilidad de 
 Ahora bien,
 ## Los retos de programación.
 
-1. **Amplitud de transición.** El sistema puede recibir dos vectores y calcular la probabilidad de transitar de el uno al otro después de hacer la observación
+1. ***Amplitud de transición.*** El sistema puede recibir dos vectores y calcular la probabilidad de transitar de el uno al otro después de hacer la observación.
+    
+    ```python
+    def transition(vec1, vec2):
+        """ Retorna la amplitud de una transición
+            (list), (list) -> complex"""
+        productoInterno = numpy.inner(vec1, vec2)
+        normaVec1 = normaVector(vec1)
+        normaVec2 = normaVector(vec2)
+        ket = productoInterno / (normaVec1 * normaVec2)
+        return numpy.round(ket)
+    ```
+    
+2. Ahora con una matriz que describa un observable y un vector ket, el sistema revisa que la matriz sea hermitiana, y si lo es, ***calcula la media y la varianza del observable en el estado dado.***
+    1. Esta función llama a las funciones necesarias para comprobar si el observable es una matriz hermitiana, y de ser hacer, procede a hallar la media y la varianza.
+
+```python
+def media(observable, vecEstado):
+    media = 0
+    ishermitiana = proobarHermitiana(observable)
+    if ishermitiana == True:
+        prod = accionMatrizVector(observable, vecEstado)
+        media = innerProduct(prod, vecEstado)
+    return media
+
+# print("La media es: ", media(obs, vecEstado))
+
+def varianza(observable, vecEstado):
+    mediaC = media(observable, vecEstado)
+    newMat = numpy.identity(len(observable))
+    for i in range(len(newMat)):
+        for j in range(len(newMat)):
+            newMat[i][j] = newMat[i][j] * mediaC
+    resta = numpy.matrix(observable) - numpy.matrix(newMat)
+    resta = np.array(resta)
+    producto = np.dot(resta, resta)
+    var = media(producto, vecEstado)
+    return var
+
+# print("La varianza es: ", varianza(obs, vecEstado))
+
+```
