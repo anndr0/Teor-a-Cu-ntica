@@ -178,3 +178,36 @@ In[1]: vecEstado = [math.sqrt(2) / 2 + 0j, (math.sqrt(2) / 2) * 1j]
 In[2]: print("La varianza es: ", varianza(obs, vecEstado))
 Out[3]: La varianza es:  (0.25+0j)
 ```
+```python
+In[0]: obs = [[1, -1j], [1j, 2]]
+In[1]: print("Los valores propios son: ", valPropio(obs), "y la probabilidad es ", probabilidadTransicion(obs, 2) )
+```
+```python
+In[0]: observable = [[0, 1/2], [1/2, 0]]
+In[1]: print(ejercicio431(observable))
+Out[2]: [[2.5+0.j 0. +0.j]
+        [0. +0.j 2.5+0.j]]
+        (0.25+0j)
+        0.0
+```
+```python
+In[0]: observable = [[0, 1/2], [1/2, 0]]
+In[1]: print(ejercicio431(observable))
+Out[2]: [[2.5+0.j 0. +0.j]
+        [0. +0.j 2.5+0.j]]
+        (0.25+0j)
+        0.0
+```
+```python
+In[0]: u1 = [[0, 1], [1, 0]]
+In[1]: u2 = [[math.sqrt(2) / 2, math.sqrt(2) / 2], [math.sqrt(2) / 2, (math.sqrt(2) / 2) * -1]]
+In[2]: print(ejercicio_441(u1, u2))
+Out[3]: (True, True, True)
+```
+```python
+In[0]: unitaryMap = [[0, 1 / math.sqrt(2), 1 / math.sqrt(2), 0], [(1 / math.sqrt(2)) * 1j, 0, 0, 1 / math.sqrt(2)],
+              [1 / math.sqrt(2), 0, 0, (1 / math.sqrt(2)) * 1j], [0, 1 / math.sqrt(2), (1 / math.sqrt(2)) * -1, 0]]
+In[1]: initialVector = [1, 0, 0, 0]
+In[2]: print(ejercicio_442(initialVector, unitaryMap))
+Out[3]: 0.0
+```
