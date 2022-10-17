@@ -65,29 +65,29 @@ Ahora bien,
 2. Ahora con una matriz que describa un observable y un vector ket, el sistema revisa que la matriz sea hermitiana, y si lo es, ***calcula la media y la varianza del observable en el estado dado.***
     1. Esta función llama a las funciones necesarias para comprobar si el observable es una matriz hermitiana, y de ser hacer, procede a hallar la media y la varianza.
 
-```python
-def media(observable, vecEstado):
-    media = 0
-    ishermitiana = proobarHermitiana(observable)
-    if ishermitiana == True:
-        prod = accionMatrizVector(observable, vecEstado)
-        media = innerProduct(prod, vecEstado)
-    return media
+    ```python
+    def media(observable, vecEstado):
+        media = 0
+        ishermitiana = proobarHermitiana(observable)
+        if ishermitiana == True:
+            prod = accionMatrizVector(observable, vecEstado)
+            media = innerProduct(prod, vecEstado)
+        return media
 
-# print("La media es: ", media(obs, vecEstado))
+    # print("La media es: ", media(obs, vecEstado))
 
-def varianza(observable, vecEstado):
-    mediaC = media(observable, vecEstado)
-    newMat = numpy.identity(len(observable))
-    for i in range(len(newMat)):
-        for j in range(len(newMat)):
-            newMat[i][j] = newMat[i][j] * mediaC
-    resta = numpy.matrix(observable) - numpy.matrix(newMat)
-    resta = np.array(resta)
-    producto = np.dot(resta, resta)
-    var = media(producto, vecEstado)
-    return var
+    def varianza(observable, vecEstado):
+        mediaC = media(observable, vecEstado)
+        newMat = numpy.identity(len(observable))
+        for i in range(len(newMat)):
+            for j in range(len(newMat)):
+                newMat[i][j] = newMat[i][j] * mediaC
+        resta = numpy.matrix(observable) - numpy.matrix(newMat)
+        resta = np.array(resta)
+        producto = np.dot(resta, resta)
+        var = media(producto, vecEstado)
+        return var
 
-# print("La varianza es: ", varianza(obs, vecEstado))
+    # print("La varianza es: ", varianza(obs, vecEstado))
 
-```
+    ```
