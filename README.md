@@ -97,6 +97,7 @@ En esta seccion se modelan los problemas 4.3.1, 4.3.2, 4.4.1, 4.4.2
 ### Ejercicio 4.3.1
 
 “Encuentre todos los estados posibles a los que puede pasar el sistema descrito en el ejercicio 4.2.2 después de que se haya llevado a cabo una medición.”
+
     ```python
     def ejercicio_431(observable):
     """ Find all the possible states the system described in Exercise 4.2.2
