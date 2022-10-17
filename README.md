@@ -1,7 +1,7 @@
 # LABORATORIO # 3. TEORÍA CUÁNTICA BÁSICA, OBSERVABLES Y MEDIDAS
 En esta librería podrás encontrar las simulaciones de algunos sistemas cuanticos descritos en la seccion 4.1 del libro ”Quantum Computing for Computer Scientist”, además de retos de programación del capítulo 4.
 
-## Instalacion
+## Instalación
 
 Para comenzar a hacer uso de esta libreria, es necesario hacer la instalacion de la librería numpy. Digitando lo siguiente por medio de la terminal.
 
@@ -90,4 +90,22 @@ Ahora bien,
 
     # print("La varianza es: ", varianza(obs, vecEstado))
 
+    ```
+## Problemas capítulo 4
+En esta seccion se modelan los problemas 4.3.1, 4.3.2, 4.4.1, 4.4.2
+
+### Ejercicio 4.3.1
+
+“Encuentre todos los estados posibles a los que puede pasar el sistema descrito en el ejercicio 4.2.2 después de que se haya llevado a cabo una medición.”
+    ```python
+    def ejercicio_431(observable):
+    """ Find all the possible states the system described in Exercise 4.2.2
+        can transition into after a measurement has been carried out.
+
+        (list) -> float """
+    spinX = [1, 0]
+        spinX = numpy.array(spinX)
+        prod = accionMatrizVector(observable, spinX)
+        probabilidad = superposition(prod, 0)
+        return probabilidad
     ```
