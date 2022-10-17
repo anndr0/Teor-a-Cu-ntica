@@ -103,7 +103,23 @@ def ejercicio_431(observable):
     can transition into after a measurement has been carried out.
 
     (list) -> float """
-spinX = [1, 0]
+    spinX = [1, 0]
+    spinX = numpy.array(spinX)
+    prod = accionMatrizVector(observable, spinX)
+    probabilidad = superposition(prod, 0)
+    return probabilidad
+```
+### Ejercicio 4.3.2
+
+“Realice los mismos cálculos que en el último ejemplo, usando el Ejercicio 4.3.1. Luego dibuje la distribución de probabilidad de los valores propios como en el ejemplo anterior.”
+
+```python
+def ejercicio_431(observable):
+""" Find all the possible states the system described in Exercise 4.2.2
+    can transition into after a measurement has been carried out.
+
+    (list) -> float """
+		spinX = [1, 0]
     spinX = numpy.array(spinX)
     prod = accionMatrizVector(observable, spinX)
     probabilidad = superposition(prod, 0)
