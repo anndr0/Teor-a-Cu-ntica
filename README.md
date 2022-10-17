@@ -1,17 +1,15 @@
 # LABORATORIO # 3. TEORÍA CUÁNTICA BÁSICA, OBSERVABLES Y MEDIDAS
 En esta librería podrás encontrar las simulaciones de algunos sistemas cuanticos descritos en la seccion 4.1 del libro ”Quantum Computing for Computer Scientist”, además de retos de programación del capítulo 4.
 
-## ##Instalacion
+## Instalacion
 
 Para comenzar a hacer uso de esta libreria, es necesario hacer la instalacion de la librería numpy. Digitando lo siguiente por medio de la terminal.
 
 ```python
-```bash
 pip install numpy
 ```
-```
 
-## ##CONTENIDO
+## CONTENIDO
 
 En la primera parte, se encuentra un simulador que permite especificar el número de posiciones y un vector ket de estado asignando las amplitudes.
 
