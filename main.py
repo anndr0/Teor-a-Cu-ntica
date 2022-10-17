@@ -128,13 +128,13 @@ def varianza(observable, vecEstado):
         for j in range(len(newMat)):
             newMat[i][j] = newMat[i][j] * mediaC
     resta = numpy.matrix(observable) - numpy.matrix(newMat)
-    resta = np.array(resta)
-    producto = np.dot(resta, resta)
+    resta = numpy.array(resta)
+    producto = numpy.dot(resta, resta)
     var = media(producto, vecEstado)
     return var
 
 
-# print("La varianza es: ", varianza(obs, vecEstado))
+print("La varianza es: ", varianza(obs, vecEstado))
 
 """El sistema calcula los valores propios del observable y la probabilidad de que el sistema
     transite a alguno de los vectores propios después de la observación. """
